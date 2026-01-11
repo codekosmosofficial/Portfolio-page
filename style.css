@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap");
+
+/* -------------------- RESET -------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+}
+
+/* -------------------- HEADER -------------------- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 900;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0 0 10px rgba(255, 106, 52, 0.5);
+}
+
+nav {
+  display: flex;
+  gap: 48px;
+}
+
+nav a {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #ff6a34, #ff8c5a);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* -------------------- HERO -------------------- */
+.hero {
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 64px;
+}
+
+/* SOCIALS */
+.hero-socials {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.hero-socials a {
+  text-decoration: none;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 106, 52, 0.12);
+  border: 1px solid rgba(255, 106, 52, 0.35);
+  color: #fff;
+  transition: 0.3s ease;
+}
+
+.hero-socials a:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 106, 52, 0.35);
+}
+
+/* AVATAR */
+.hero-avatar {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+}
+
+.hero-avatar::before {
+  content: "";
+  position: absolute;
+  inset: -80px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 106, 52, 0.4) 0%,
+    rgba(255, 140, 90, 0.2) 45%,
+    transparent 70%
+  );
+  filter: blur(30px);
+  z-index: 0;
+}
+
+.hero-avatar img {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  object-position: center 10%;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 20px 60px rgba(255, 106, 52, 0.3);
+}
+
+/* TEXT */
+.hero-text {
+  max-width: 460px;
+  text-align: center;
+}
+
+.hero-text h1 {
+  font-size: 64px;
+  font-weight: 800;
+  letter-spacing: 8px;
+  text-shadow: 2px 2px 4px #9ff764;
+}
+
+.hero-text h2 {
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: 6px;
+  margin-top: 8px;
+  text-shadow: 2px 2px 4px #9ff764;
+}
+
+.hero-text p {
+  margin-top: 20px;
+  font-size: 15px;
+  line-height: 1.6;
+  text-shadow: 2px 2px 4px #000;
+}
+
+/* -------------------- TABLET -------------------- */
+@media (max-width: 1097px) {
+  .hero {
+    gap: 40px;
+  }
+
+  .hero-avatar {
+    width: 260px;
+    height: 260px;
+  }
+  .hero-avatar img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-text h1 {
+    font-size: 48px;
+  }
+
+  .hero-text h2 {
+    font-size: 34px;
+  }
+}
+
+/* -------------------- MOBILE -------------------- */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  nav {
+    gap: 24px;
+  }
+
+  .hero {
+    flex-direction: column;
+    margin: 60px auto;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .hero-socials {
+    flex-direction: row;
+    order: 4;
+  }
+
+  .hero-avatar {
+    order: 3;
+    width: 240px;
+    height: 240px;
+  }
+
+  .hero-text {
+    order: 1;
+    max-width: 90%;
+  }
+}
+
+/* -------------------- SMALL MOBILE -------------------- */
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 30px;
+    letter-spacing: 4px;
+  }
+
+  .hero-text h2 {
+    font-size: 22px;
+    letter-spacing: 3px;
+  }
+
+  .hero-avatar {
+    width: 200px;
+    height: 200px;
+  }
+
+  nav a {
+    font-size: 13px;
+  }
+}
